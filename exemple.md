@@ -5,6 +5,7 @@
 
 </center>
 
+---
 
 <div class="resume-section">
 
@@ -14,6 +15,7 @@ Desenvolvedor Full Stack com foco em PHP, Java e JavaScript/TypeScript. Procuro 
 
 </div>
 
+---
 
 <div class="resume-section">
 
@@ -25,6 +27,7 @@ Desenvolvedor Full Stack com foco em PHP, Java e JavaScript/TypeScript. Procuro 
 
 </div>
 
+---
 
 <div class="resume-section">
 
@@ -46,6 +49,7 @@ Desenvolvedor Full Stack com foco em PHP, Java e JavaScript/TypeScript. Procuro 
 
 </div>
 
+---
 
 <div class="resume-section">
 
@@ -67,6 +71,7 @@ _Exército Brasileiro, Pindamonhangaba, SP_
 
 </div>
 
+---
 
 <div class="resume-section">
 
@@ -86,6 +91,7 @@ _Exército Brasileiro, Pindamonhangaba, SP_
 
 </div>
 
+---
 
 <div class="resume-section">
 
