@@ -1,6 +1,6 @@
 # Resumemk
 
-This a simple golang CLI tool taht allows you to generate pdf files from markdown files.
+This a simple golang CLI tool that allows you to generate html files from markdown files.
 It also enables you to add your own custom css.
 
 ## Installation
