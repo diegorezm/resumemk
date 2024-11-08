@@ -22,13 +22,7 @@ yay -S wkhtmltopdf-static
 ## Usage
 
 ```bash
-./resumemk -f exemple.md -t 'Resume'  -native 
-```
-
-## Example
-
-```bash
-resumemk -i resume.md -o resume.pdf
+./resumemk -f exemple.md -t 'Resume' -type 'html' -o 'resume' -native 
 ```
 
 ## License
