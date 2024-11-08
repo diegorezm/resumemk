@@ -44,18 +44,7 @@ func convertToHtml(content []byte, title, stylePath string, native bool) (string
 		md = goldmark.New(
 			goldmark.WithExtensions(
 				extension.GFM,
-			),
-			goldmark.WithParserOptions(
-				parser.WithAutoHeadingID(),
-			),
-			goldmark.WithRendererOptions(
-				html.WithHardWraps(),
-			),
-		)
-	} else {
-		md = goldmark.New(
-			goldmark.WithExtensions(
-				extension.GFM,
+				extension.Typographer,
 			),
 			goldmark.WithParserOptions(
 				parser.WithAutoHeadingID(),
@@ -63,6 +52,20 @@ func convertToHtml(content []byte, title, stylePath string, native bool) (string
 			goldmark.WithRendererOptions(
 				html.WithUnsafe(),
 				html.WithHardWraps(),
+				html.WithXHTML(),
+			),
+		)
+	} else {
+		md = goldmark.New(
+			goldmark.WithExtensions(
+				extension.GFM,
+				extension.Typographer,
+			),
+			goldmark.WithParserOptions(
+				parser.WithAutoHeadingID(),
+			),
+			goldmark.WithRendererOptions(
+				html.WithXHTML(),
 			),
 		)
 	}
@@ -94,10 +97,10 @@ func main() {
 	var enableNativeHtml bool
 	var stylePath string
 
-	flag.StringVar(&filePath, "file", "", "File to convert")
-	flag.StringVar(&outFile, "out", "out.html", "Output file")
-	flag.StringVar(&templateTitle, "title", "Resume", "Titlte of the resume")
-	flag.StringVar(&stylePath, "style", "styles.css", "Path to styles.css")
+	flag.StringVar(&filePath, "f", "", "File to convert")
+	flag.StringVar(&outFile, "o", "out.html", "Output file")
+	flag.StringVar(&templateTitle, "t", "Resume", "Titlte of the resume")
+	flag.StringVar(&stylePath, "s", "styles.css", "Path to styles.css")
 	flag.BoolVar(&enableNativeHtml, "native", false, "Enable native html")
 
 	flag.Parse()
