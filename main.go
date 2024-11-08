@@ -21,22 +21,6 @@ const (
 )
 
 func convertToHtml(content []byte, title, stylePath string, native bool) (string, error) {
-	htmlTemplate := `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>%s</title>
-  <style>
-    %s
-  </style>
-</head>
-<body>
-  <div id="resume">
-    %s
-  </div>
-</body>
-</html>`
 
 	var md goldmark.Markdown
 	if native {
@@ -75,7 +59,14 @@ func convertToHtml(content []byte, title, stylePath string, native bool) (string
 		return "", err
 	}
 
-	return fmt.Sprintf(htmlTemplate, title, getCssStyle(stylePath), buf.String()), nil
+	var styles string
+	if stylePath == "" {
+		styles = DEFAULT_STYLE_SHEET
+	} else {
+		styles = getCssStyle(stylePath)
+	}
+
+	return fmt.Sprintf(DEFAULT_HTML_TEMPLATE, title, styles, buf.String()), nil
 }
 
 func getContentFromFile(filePath string) ([]byte, error) {
@@ -120,7 +111,14 @@ func convertToPdf(content, outFile, title string) error {
 	}
 
 	fmt.Printf("PDF generated successfully: %s\n", pdfFile)
+	err = os.Remove(inFile)
+
+	if err != nil {
+		return fmt.Errorf("Error removing HTML file: %v", err)
+	}
+
 	return nil
+
 }
 
 func main() {
@@ -136,7 +134,7 @@ func main() {
 	flag.StringVar(&outFile, "o", "out", "Output file (without extension)")
 	flag.StringVar(&outputTypeString, "type", "pdf", "Output type (pdf or html)")
 	flag.StringVar(&templateTitle, "t", "Resume", "Title of the resume")
-	flag.StringVar(&stylePath, "s", "styles.css", "Path to styles.css")
+	flag.StringVar(&stylePath, "s", "", "Path to styles.css. If none is provided, the default style will be used.")
 	flag.BoolVar(&enableNativeHtml, "native", false, "Enable native HTML rendering")
 
 	flag.Parse()

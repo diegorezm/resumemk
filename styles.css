@@ -1,8 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
 html,
 body,
 div,
@@ -50,8 +45,6 @@ dl,
 dt,
 dd,
 ol,
-ul,
-li,
 fieldset,
 form,
 label,
@@ -111,33 +104,21 @@ body {
   line-height: 1;
 }
 
-ol,
-ul {
-  list-style: none;
-}
-
 blockquote,
 q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
 
 :root {
   --background: #eff1f5;
   --foreground: #4c4f69;
   --foreground-alt: #5c5f77;
   --primary-foreground: #1e66f5;
-  --fs-xs: 1rem;
-  --fs-sm: 1.2rem;
-  --fs-md: 1.4rem;
-  --fs-lg: 1.6rem;
+  --fs-xs: 14px;
+  --fs-sm: 16px;
+  --fs-md: 18px;
+  --fs-lg: 20px;
 }
 
 html,
@@ -148,6 +129,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   font-size: var(--fs-xs);
+  line-height: 1.5;
 }
 
 #resume {
