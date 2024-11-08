@@ -146,6 +146,7 @@ a {
 
 
 h1 {
+  text-align: center;
   font-size: var(--fs-lg);
   margin-bottom: 0.8rem;
 }

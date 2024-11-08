@@ -8,7 +8,7 @@ blockquote,q {quotes:none;}
 html,body {margin:0;padding:0;background:var(--background);color:var(--foreground);font-family:Arial,Helvetica,sans-serif;font-size:var(--fs-xs);line-height:1.5;}
 #resume {max-width:1200px;margin:0 auto;}
 a {color:var(--primary-foreground);text-decoration:none;transition:all 0.2s ease-in-out;font-weight:bold;}
-h1 {font-size:var(--fs-lg);margin-bottom:0.8rem;}
+h1 {text-align:center;font-size:var(--fs-lg);margin-bottom:0.8rem;}
 h2 {font-size:var(--fs-md);margin-bottom:0.5rem;font-weight:bold;}
 h3 {font-size:var(--fs-sm);color:var(--foreground-alt);margin-top:0.5rem;margin-bottom:0.5rem;font-weight:bold;}
 .resume-section {padding:0.7rem;}
